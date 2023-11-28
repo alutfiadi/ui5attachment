@@ -1,7 +1,9 @@
 <mvc:View controllerName="attachment.controller.Home"
     xmlns="sap.uxap"
     xmlns:layout="sap.ui.layout"
+    xmlns:l="sap.ui.layout"
     xmlns:m="sap.m"
+	xmlns:u="sap.ui.unified"
 	xmlns:mvc="sap.ui.core.mvc">
 <ObjectPageLayout id="ObjectPageLayout"
 		enableLazyLoading="true"
@@ -74,7 +76,24 @@
 		<sections>
 			<ObjectPageSection titleUppercase="false" id="attachmentOPS" title="Attachment">
 			<subSections>
+			<ObjectPageSubSection id="attachmentSS2" titleUppercase="false">
+				<l:VerticalLayout>
+					<u:FileUploader
+						id="fileUploader"
+						multiple="false"
+						useMultipart="false"
+						afterDialogClose="onDialogClose"
+					/>
+					<m:Button
+						text="Upload File"
+						press="uploadFile"/>
+					<m:Button
+						text="Base64"
+						press="handleBase64"/>
+				</l:VerticalLayout>
+				</ObjectPageSubSection>
 				<ObjectPageSubSection id="attachmentSS1" titleUppercase="false">
+				
 					<m:UploadCollection 
 						id="attachmentBlock"
 						instantUpload="false"
@@ -139,6 +158,9 @@
 									enabled="true"
 									visible="true"
 									type="Transparent" />
+									<m:Button
+										text="Upload File"
+										press="onStartUpload"/>
 								<m:UploadCollectionToolbarPlaceholder />
 							</m:OverflowToolbar>
 						</m:toolbar>
@@ -166,6 +188,7 @@
 					        			title="{i18n>attachmentCreatedAt}"
 					        			text="{path:'CreatedAt', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium'}}"
 					        			/>
+				
 					        	</m:attributes>	
 					        </m:UploadCollectionItem>
 					    </m:items>
