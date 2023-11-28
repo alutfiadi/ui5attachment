@@ -12,31 +12,7 @@
 		upperCaseAnchorBar="false">
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
-				<expandedHeading>
-					<m:Title text="Intelira" wrapping="true"/>
-				</expandedHeading>
-
-				<snappedHeading>
-					<m:FlexBox fitContainer="true" alignItems="Center">
-						<m:Avatar src="./misc/InteliraPhoto.png" class="sapUiTinyMarginEnd" displayShape="Square" displaySize="S" />
-						<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-							<m:Title text="Intelira" wrapping="true"/>
-							<m:Text text="Digital Earth"/>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-							<m:Link text="Go to Intelira" href="https://intelira.tech/"/>
-							<m:Link text="contact@intelira.tech" href="https://intelira.tech/contact/"/>
-						</layout:VerticalLayout>
-					</m:FlexBox>
-				</snappedHeading>
-
-				<expandedContent>
-					<m:Text text="Digital Earth"/>
-				</expandedContent>
-
-				<snappedContent>
-				</snappedContent>
-
+				
 				<actions>
 					<ObjectPageHeaderActionButton 
 						text="GOS Settings" 
@@ -48,30 +24,6 @@
 				</actions>
 			</ObjectPageDynamicHeaderTitle>
 		</headerTitle>
-
-		<headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" >
-				<m:Avatar src="./misc/InteliraPhoto.png" displayShape="Square" displaySize="L" />
-
-				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-					<m:Link text="Go to Intelira" href="https://intelira.tech/"/>
-					<m:Link text="contact@intelira.tech" href="https://intelira.tech/contact/"/>
-				</layout:VerticalLayout>
-
-				<layout:HorizontalLayout class="sapUiSmallMarginBeginEnd">
-			    </layout:HorizontalLayout>
-
-				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-					<m:Label text=""/>
-					<m:VBox>
-					</m:VBox>
-				</layout:VerticalLayout>
-
-				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-					<m:Label text=""/>
-				</layout:VerticalLayout>
-			</m:FlexBox>
-		</headerContent>
 
 		<sections>
 			<ObjectPageSection titleUppercase="false" id="attachmentOPS" title="Attachment">
@@ -96,7 +48,7 @@
 				
 					<m:UploadCollection 
 						id="attachmentBlock"
-						instantUpload="false"
+						instantUpload="true"
 						items="{
 							path: '/AttachmentSet',
 							sorter: {
@@ -140,27 +92,6 @@
 									enabled="true"
 									visible="true"
 									type="Transparent" />
-								<m:Button
-									id="deleteNewButton"
-									text="Delete New"
-									icon="sap-icon://clear-all" 
-									tooltip="Delete Attachments added in this session"
-									press="onDeleteAttachmentNew"
-									enabled="true"
-									visible="true"
-									type="Transparent" />
-								<m:Button
-									id="deleteAllButton"
-									text="Delete All"
-									icon="sap-icon://delete" 
-									tooltip="Delete all Attachments"
-									press="onDeleteAttachmentAll"
-									enabled="true"
-									visible="true"
-									type="Transparent" />
-									<m:Button
-										text="Upload File"
-										press="onStartUpload"/>
 								<m:UploadCollectionToolbarPlaceholder />
 							</m:OverflowToolbar>
 						</m:toolbar>
