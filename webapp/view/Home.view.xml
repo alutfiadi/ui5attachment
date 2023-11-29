@@ -45,7 +45,7 @@
 				</l:VerticalLayout>
 				</ObjectPageSubSection>
 				<ObjectPageSubSection id="attachmentSS1" titleUppercase="false">
-				
+					<!-- <m:Image src="/sap/opu/odata/sap/ZAL_ATTACHMENT_SRV/AttachmentSet(InstanceID='000010000310',Id='FOL38000000000004EXT48000000000950')/$value"></m:Image> -->
 					<m:UploadCollection 
 						id="attachmentBlock"
 						instantUpload="true"

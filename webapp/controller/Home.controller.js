@@ -229,23 +229,23 @@ sap.ui.define(
       //   oUploadCollection.addHeaderParameter(oCustomerAcceptToken);
       // },
 
-      // onFileDeleted: function (oEvent) {
-      //   var oItem = oEvent.getParameter("item"),
-      //     sPath = oItem.getBindingContext().getPath(),
-      //     sFileName = oEvent.getParameter("item").getProperty("fileName"),
-      //     oModel = this.byId("attachmentBlock").getModel(),
-      //     fnSuccess = function () {
-      //       this._refreshAttachments();
-      //       MessageToast.show("File '" + sFileName + "' is Deleted");
-      //     }.bind(this),
-      //     fnError = function (oError) {
-      //       MessageToast.show(
-      //         "Error ocurred: Check Message Popover at bottom left"
-      //       );
-      //     }.bind(this);
+      onFileDeleted: function (oEvent) {
+        var oItem = oEvent.getParameter("item"),
+          sPath = oItem.getBindingContext().getPath(),
+          sFileName = oEvent.getParameter("item").getProperty("fileName"),
+          oModel = this.byId("attachmentBlock").getModel(),
+          fnSuccess = function () {
+            this._refreshAttachments();
+            MessageToast.show("File '" + sFileName + "' is Deleted");
+          }.bind(this),
+          fnError = function (oError) {
+            MessageToast.show(
+              "Error ocurred: Check Message Popover at bottom left"
+            );
+          }.bind(this);
 
-      //   oModel.remove(sPath, { success: fnSuccess, error: fnError });
-      // },
+        oModel.remove(sPath, { success: fnSuccess, error: fnError });
+      },
 
       // onFilenameLengthExceed: function () {
       //   var oSetting = this.getView().getModel("attachmentSettings"),
